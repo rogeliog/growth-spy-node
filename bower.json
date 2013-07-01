@@ -4,6 +4,7 @@
   "dependencies": {
     "flight": "latest",
     "requirejs": "latest",
-    "highcharts": "latest"
+    "highcharts": "latest",
+    "bootstrap": "latest"
   }
 }
