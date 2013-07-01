@@ -1,4 +1,6 @@
 extends layout
 
 block content
-  #chino(data-main='#{stats.forks}')
+  script.
+    preloadedGraphData = {forks: '#{JSON.stringify(stats.forks)}'}
+  #chino(data-main='#{stats}')

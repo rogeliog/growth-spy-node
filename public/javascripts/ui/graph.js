@@ -1,22 +1,34 @@
-define(['components/flight/lib/component'],
-    function(defineComponent) {
-      return defineComponent(graph);
+define(
+  [
+    'components/flight/lib/component',
+    'components/highcharts/highcharts'
+  ],
 
-      function graph() {
-        this.defaultAttrs({
-          graphSelector: "#chino"
+  function(defineComponent) {
+    return defineComponent(graph);
+
+    function graph() {
+      this.defaultAttrs({
+        data: [],
+        graphSelector: "#chino"
+      });
+
+      this.setupGraph = function() {
+        this.trigger('uiRenderGraph', {
+          type: this.attr.type,
+          title: this.attr.title,
+          graphData: this.attr.data
         });
+      };
 
-        this.renderGraph = function() {
-          alert("Click");
-        };
+      this.renderGraph = function(ev, data) {
+        $(this.attr.graphSelector).highcharts(data);
+      };
 
-        this.after('initialize', function() {
-          this.on(document, "click", {
-            'graphSelector': this.renderGraph
-          });
-
-        });
-      }
+      this.after('initialize', function() {
+        this.on('graphReady', this.renderGraph);
+        this.setupGraph();
+      });
     }
+  }
 );

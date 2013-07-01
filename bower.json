@@ -2,7 +2,8 @@
   "name": "myApp",
   "version": "1.2.1",
   "dependencies": {
-    "flight": "~1.0.0",
-    "requirejs": "latest"
+    "flight": "latest",
+    "requirejs": "latest",
+    "highcharts": "latest"
   }
 }
