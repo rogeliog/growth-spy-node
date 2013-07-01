@@ -10,12 +10,21 @@ var repoStats = function(author, repoName) {
     author: author,
     repoName: repoName,
     stats: {
+      watchers: [
+        [new Date().setDate(d.getDate() - 10), 20],
+        [new Date().setDate(d.getDate() - 9), 80],
+        [new Date().setDate(d.getDate() - 8), 100],
+        [new Date().setDate(d.getDate() - 6), 500],
+        [new Date().setDate(d.getDate() - 5), 700],
+        [new Date().setDate(d.getDate() - 4), 600],
+        [new Date().setDate(d.getDate() - 1), 490]
+      ],
       forks: [
         [new Date().setDate(d.getDate() - 10), 20],
-        [new Date().setDate(d.getDate() - 9), 50],
-        [new Date().setDate(d.getDate() - 8), 100],
-        [new Date().setDate(d.getDate() - 6), 200],
-        [new Date().setDate(d.getDate() - 5), 300],
+        [new Date().setDate(d.getDate() - 9), 80],
+        [new Date().setDate(d.getDate() - 8), 1000],
+        [new Date().setDate(d.getDate() - 6), 500],
+        [new Date().setDate(d.getDate() - 5), 700],
         [new Date().setDate(d.getDate() - 4), 600],
         [new Date().setDate(d.getDate() - 1), 490]
       ]

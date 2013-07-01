@@ -10,11 +10,11 @@ define(
     function graph() {
       this.defaultAttrs({
         data: [],
-        graphSelector: "#chino"
+        graphSelector: ""
       });
 
       this.setupGraph = function() {
-        this.trigger('uiRenderGraph', {
+        this.trigger('uiNeedsGraph', {
           type: this.attr.type,
           title: this.attr.title,
           graphData: this.attr.data
@@ -26,7 +26,7 @@ define(
       };
 
       this.after('initialize', function() {
-        this.on('graphReady', this.renderGraph);
+        this.on('dataGraphReady', this.renderGraph);
         this.setupGraph();
       });
     }

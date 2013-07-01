@@ -1,6 +1,15 @@
 extends layout
 
 block content
+  h1 Stats for
+  h2 #{author}/#{repoName}
   script.
-    preloadedGraphData = {forks: '#{JSON.stringify(stats.forks)}'}
-  #chino(data-main='#{stats}')
+    preloadedGraphData = {
+        forks: '#{JSON.stringify(stats.forks)}',
+        watchers: '#{JSON.stringify(stats.watchers)}'
+      }
+  h4 Forks
+  #forks
+
+  h4 Watcher
+  #watchers

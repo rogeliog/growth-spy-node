@@ -7,7 +7,7 @@ define(
 
     function graph() {
       this.newGraph = function(ev, data) {
-        this.trigger('graphReady', {
+        this.trigger('dataGraphReady', {
           chart: { type: data.type },
           title: { text: data.title },
           xAxis: { type: 'datetime' },
@@ -16,7 +16,7 @@ define(
       };
 
       this.after('initialize', function() {
-        this.on('uiRenderGraph', this.newGraph);
+        this.on('uiNeedsGraph', this.newGraph);
       });
     }
   }
