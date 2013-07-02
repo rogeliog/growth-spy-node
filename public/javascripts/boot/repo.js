@@ -12,7 +12,7 @@ define( ['ui/graph', 'data/graph'], function(GraphUI, GraphData) {
     GraphUI.attachTo("#watchers", {
       graphSelector: "#watchers",
       data: JSON.parse(preloadedGraphData.watchers),
-      title: 'Forks',
+      title: 'Watchers',
       type: 'spline',
     });
   }
