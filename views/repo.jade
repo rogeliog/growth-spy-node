@@ -1,15 +1,21 @@
 extends layout
 
 block content
-  h1 Stats for
-  h2 #{author}/#{repoName}
   script.
     preloadedGraphData = {
-        forks: '#{JSON.stringify(stats.forks)}',
-        watchers: '#{JSON.stringify(stats.watchers)}'
-      }
-  h4 Forks
-  #forks
+      forks: '#{JSON.stringify(stats.forks)}',
+      watchers: '#{JSON.stringify(stats.watchers)}'
+    }
 
-  h4 Watcher
-  #watchers
+  h1.muted Stats for #{author}/#{repoName}
+
+  .row-fluid
+    ul#stats.nav.nav-tabs
+      li.active
+        a(href="#forks") Forks
+      li
+        a(href="#watchers") Watchers
+
+    div.tab-content.span12
+      #forks.tab-pane.active
+      #watchers.tab-pane

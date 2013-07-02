@@ -15,6 +15,10 @@ define( ['ui/graph', 'data/graph'], function(GraphUI, GraphData) {
       title: 'Watchers',
       type: 'spline',
     });
+    $('#stats a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
   }
 
   return initialize;

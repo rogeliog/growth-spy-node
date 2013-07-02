@@ -6,3 +6,5 @@ body {
 a {
   color: #00B7FF;
 }
+
+#watchers, #forks { width:90%; }
